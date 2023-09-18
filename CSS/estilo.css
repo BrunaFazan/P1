@@ -1,0 +1,22 @@
+
+.infos{
+  width: 200px;
+  height: 250px;  
+  position: absolute;
+  top: 215px;
+  left: 240px;
+  background-color: rgba(255, 100, 0, 0.5);
+}
+.texto{
+  width: 200px;
+  height: 250px;
+  position: absolute;
+  top: 200px;
+  left: 250px;
+  color: black;
+  background-color: orange;
+
+}
+.sobre_nos{
+  padding: 10px;
+}
