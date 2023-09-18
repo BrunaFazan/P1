@@ -1,0 +1,318 @@
+Aula Desenvolvimento Web Mauá:
+! e tab já aparece toda a estrutura de Head e body que precisamos 
+o head é toda a parte que não aparece pro usuário 
+<title>dentro do head<title> dá o nome á pagina
+ 
+<!-- o <meta> serve para informar o navegador o que estamos usando -->
+normalmente é sempre UTF-8
+<meta charset="utf-8"> 
+<meta lang="pt-br"> a lingua usada 
+o meta fica dentro do head 
+</head>
+
+
+-----------------------
+
+o body é a parte que parece pro usário 
+<body>
+tudo que ficar aqui dentro aparece pro usuário, é a estrutura da página
+a menos que esteja em comentário 
+<ul(se colocarmos aqui dentro type=circle a bolinha aparece aberta, square aparece quadrado e disc aparece ooriginal> unorded list (?)
+<li> significa list item </li>
+<li> podemos add itens da lista, mas eles aparecem só com um ponto ao lado</li>
+
+<ol também tem complementos, 1(nuemros), A(letras maiusculas), a(letras minusculas), I(romanos maiusculos), i(romanos minusculos) > ordenated list 
+<li> aqui aparecem numeros ao lado dos itens </li>
+1.
+2.
+3. assim
+
+<!--             --> podemos add comentário apertando ctrl e ; 
+<h1> <h1> define o tamanho do título, quanto menor o número maior o título
+entre h1 e h3 o h1 será maior
+
+br serve como se fosse um parágrafo pula linha
+
+e hr pula uma linha mas adiciona literalmente uma linha ________________________________
+
+o strong deixa o texto em negrito
+
+<p> p é parágrafo <p>
+
+dentro do parágrafo podemos add <p> Visite nossa <a href="o link"> próxima página </a></p>
+</body>
+
+<strong>: Define um texto com ênfase forte, geralmente exibido em negrito.
+
+<em>: Define um texto com ênfase leve, geralmente exibido em itálico.
+
+<span>: Um contêiner genérico que permite aplicar estilos ou scripts a uma parte específica do texto.
+
+<a>: Define um link para outra página ou recurso.
+
+<br>: Insere uma quebra de linha.
+
+<hr>: Insere uma linha horizontal para separar conteúdo.
+
+<time>: Usado para representar datas e horas de maneira semântica.
+
+
+------------------------------------------------
+segunda aula
+
+dentro das tags conseguimos adicionar atributos 
+<tag atributos>
+
+para iserir imagem é 
+img
+  <img src="./images/home.jpg" alt="Voltar pra casa">
+vai aparecer o scr= nisso voce referencia onde a foto está, nesse caso ela fica dentro de outra aba chamada images.
+é só por ./images/o nome da foto (home.jpg) dentro do alt fica escrito algo que aparece se a imagem sumir, nesse caso, voltar pra casa.
+
+
+
+<p><a href="home.html"> aqui a ancora vai colocar o link na imagem 
+  <img src="./images/home.jpg" alt="Voltar pra casa" width="80">
+
+
+audio:
+num paragrafo 
+<audio vai aparecer outrasescritas, apaga pra ficar:
+<audio controls>
+<source src"(aqui dentro voce coloca onde o audio esta)./audios/seleciona o arquivo" type="audio/mpeg"
+
+<audio controls> aqui podem entrar outras coisas, como deixar o audio em loop, sem conseguir pausar etc, passar o mouse encima da tag
+
+
+video é o mesmo esquema de audio, mas com o arquivo mp4 
+
+
+youtube 
+pega o video compartilhar -- incorporar -- cola dentro de um <p> </p> no vs code
+
+
+como colocar elementos programaveis dentro do codigo:
+
+
+---------------------------------
+o div serve para divisão de itens na pagina
+que tem id, para identificar cada coisa
+
+header é um lemento que introduz o assunto
+
+
+para criação de tabelas no HTML usamos <table (aqui podemos colocar border=1 que definirá a espessura da tabela)>
+depois o <tr> que define a linha da tabela e dentro vem o <td> que é table data que são as colunas
+tem  o th tbm, que é table header, o cabeçário da tabela
+
+
+o colspan faz a coluna mesclar com a outra
+o rowspan é a mesma coisa mas com linhas 
+
+-----------------------------------
+
+Formulários:
+dentro do body inserimos a tag form, onde colocamos as informações que queremos em texto.
+depois a tag input vai trazer type=text e name, o type é onde vai aparecer a caixinha para que o usuário coloque seu nome etc. o name é para identificarmos mais para frente de onde estamos puxando os dados. o type pode ser passoword, ao invés de text, assim a senha não fica exposta.
+o type button cria um botão, mas sem funcionalidade para o form, para ter funcionalidade precisa ser a tag subimit  
+
+!!!NO FINAL DE TODA LINHA QUE NÃO TEM TAG DE TEXTO TEM QUE POR <br> NO FINAL!!!!!!!!!!
+
+
+
+  <p>Interesses</p>
+    <input type="checkbox" name="interesses"> Futebol <br>
+    <input type="checkbox" name="interesses"> Cursos <br>
+    <input type="checkbox" name="interesses"> Moda <br>
+
+  <p>Estado</p>
+    <select name="estado">
+      <option value="sp">SP</option>
+      <option value="mg">MG</option>
+
+
+------------------------------------------------
+
+CSS:
+
+Inline style
+O estilo Inline para personalizar dentro do CSS colocaremos os atributos dentro das próprias tags ou nas linhas de texto
+ex: 
+dentro de um parágrafo podemos colocar o atributo style="color:" e selecionar a cor do texto que queremos 
+p style="color: blueviolet;">.
+
+Internal Style Sheet>
+
+Seletores.
+abrimos um style dentro de head, dentro desse style podemos abrir os seletores, se colocarmos h1{color blue} tudo que é h1 vai ficar azul, ou p{} de parágrafo etc. Os seletores servem para colocar dentro do head dentro da tag style para identificar o que voce quer formatar.
+
+
+abrimos outra pasta e dentro da pasta um arquivo, esse novo arquivo colocaremos os seletores, e vamos referencia-los na estrutura da pág.
+
+1- tipo, mais genérico (peso 0,1,0)
+
+2- classe, uma só clase pode identificar mais de um elemento. podemos colocar uma classe em mais de um lugar, normalmente usamos classes para trabalhar as excessões, se eu tenho 6 parágrafos e quero 5 azuis e 1 branco, coloca-se a tag p{color azul} e cria-se uma classe para o paragrafo ficar branco 
+
+3- id mais pesado (1,0,0) um id é único, ele vai dentro de uma tag, e tudo que queremos que faça parte desse id colocaremos dentro dessa tag. o id podemos usar uma só vez por página.
+
+
+referenciamos id com # e o nome do id
+#titulo{ (aqui tudo que tiver título como id vai ficar verde
+  color: green;
+  text-align: center;
+}
+p#descricao{ (aqui tudo que tiver p e id descrição vai ficar azul, mas tem que ser os dois, se for só descrição não nem só p 
+color: blue;
+aqui é um tipo e um id 
+intersecção
+}
+
+para refrenciar classe é com ponto
+.promocao 
+
+
+.promocao{
+  text-align: center;
+  background-color: violet;
+}
+p.promocao{
+  text-align: center; background-color: blanchedalmond;
+}
+
+o p.promocao é mais forte e vai ser levado em consideração
+
+p.final-pagina#rodape{ esse é "E"
+.curso, .novo-curso, #contato{ esse é 'OU'
+
+
+Descendência - seletores descendentes 
+
+o SPAN deixa um texto ao lado do outro 
+ 
+
+container pai é qual div engloba as tags que voce está mexendo
+<body>
+  <div>
+  <p class="formatacao">Conteúdo</p>
+  <p>Conteúdo</p>
+</div>
+
+aqui nesse caso a DIV é o cintainer pai dos parágrafos
+
+primeiro ele vai dar preferencia ao filho e depois ao pai, (cascading).
+
+a medida de tamanho 'em' é muito útil, pois se precisármos mudar o tamanho padrão dos containers tudo dentro deles vai mudar automáticamente.
+se quisermos o mesmo fundo para toda página basta usar o 'body' como container pai do código todo.
+background image vai por foto de fundo
+background-image: url('imagens/yoshi.png');
+backgroundrepeat vai controlar quantas imagens aparecem 
+background-attachment: fixed; ixa a imagem fixa no fundo da página
+
+
+--------------------------------------------
+Box Model HTML
+padding é espacamento interno, as divs se comportam como caixas dentro do html/css 
+margin é o espacamento externo, consegue controlar o espacamento de dois elementos.
+margin colapse é quando nós definimos duas margens diferentes para duas divs, e ele vai considerar a margem maior 
+
+o float é para divs(caixas) flutuantes. para conseguirmos posicionar as divs onde quisermos.
+o clear serve para posicionar itens na parte de baixo das divs (????)
+caso queria colocar um fundo para essas divs flutuantes precisamos do "clear=both" dentro de outra div sem conteúdo logo abaixo das divs anteriores, pois, o comportamento de itens flutuantes é assim, eles não ocupam tofo o espaço de fundo, só o espaco necessário. eles não empurram sua div pai para que todos os elementos estejam dentro delas. precisamos do clear para isso. o que vai empurrar o background todo são os outros itens dentro dele, não os divs flutuantes.
+---------------------------
+elementos inline, block e inline-block
+block: <h1> <p> <table> ocuparão todo espaço da tela e ficarão um embaixo do outro
+inline: <a> <span> <img> a largura é de acordo com seu conteudo e fica um do lado do outro
+inline-block:a largura é do tamanho do item mas fica um embaixo do outro
+
+
+para transformar um h1 por exemplo, em inline 
+podemos ir na classe que ele se encontra, e colocar: display:inline; fazendo com que fique um do ado do outro ao invés de embaixo
+podemos modificar o comportamento do elemento tipo bloco para ser tipo inline.
+
+com elementos inline é a mesma coisa, só que display:block
+transformando-o em comportamento tipo bloco 
+
+com o display inline-block ele só quebra para outra linha quando não cabe mais na mesma linhas
+
+temos posocionamentos:
+o position: static é o posicionamento padrão que é aplicado nos elementos.
+propriedades de deslocamento: 
+dentro de parágrafos ou divs e ids que tenham o position relative é possivem movimentá-los com as proprierdades abaixo:
+top right left bottom 
+podendo definir os px ou % o em para o deslocamento 
+podemos usar numeros positivos ou negativos
+o top empurra de cima pra baixo
+bottom de baixo pra cima
+left esquerda pra direita
+right direita pra esquerda 
+
+na classe absolute ele sai do fluxo normal, e os outros elementos se comportam como se o elemento com a position absolute não estivesse ali
+
+o fixed tbm sai do fluxo do aboluto
+
+relativo se baseia na posição inicial dele
+o  absoluto define uma caixa que é removida do fluxo do doc baseado no container que tenha uma posição
+o fixo é baseado na tela do seu navegador 
+
+---------------------------------
+z index; o Z Index serve para a sobreposição de elementos, se eu tenho duas caixas e uma está encima da outra, o z index masi alto fará a caixa ficar na frente das outras,maior zindex vai ficar encima dos menores.
+---------------------------------
+a formatação de links é um pouco diferente do resto, links tem estados, depois de cllicar encima de um link ele ficar com uma  cor diferente 
+ /* links não visitados */
+    a: link{
+      
+    } assim é como se edita o primeiro estado de um link, quando ele ainda não foi visitado 
+
+formatação de links tem uma prdem a ser seguida no código:
+primeiro a total depois, não visitados, depois visitados, depois o hover e depois o active.
+    a{
+      padding: 5px 10px;
+      text-decoration: none;
+    }
+ /* links não visitados */
+      a:link, a:visited{ color:#b9c941; podemos colocar o visited e o link(non visited) na mesma classe, caso queiramos a mesma formatação.
+      }
+ /* links hover, quando vc passa o cursor encima do link, sobre ele */
+      a:hover{
+      background:#6d790f ;
+      color:#fff ;
+      }
+      a:active{
+        color: #e4f371;
+      } quando vc clica e segura em um link
+-----------------------------
+Seletores:
+seletor de id:
+#id{
+}
+
+	Seletor de filho: 
+	existem seletores que só vão personalizar itens que são filhos diretos daquilo que você está informando, como por exemplo:
+li>a {} 
+só vai selecionar os a que são filhos diretos de li.
+se for <li> a dfdfdsd <li> vai selecionar
+<li> <span> a shdhdh <span> <li> não vai selecionar.
+
+	Seletor de descendente:
+	seleciona qualquer um que esteja dentro da tag que foi escolhida, não apenas filho direto por exemplo:
+p a {
+}
+vai selecionar todos os a que estão dentro de p.
+
+	seletor de irmão adjacente:
+h1+p{}
+depois de um elemento H1 ele vai pegar somente o primeiro P depois do h1. o que está logo aaixo do h1, e somente ele se tivr algo entre p h1 e o ele não vai funcionar como irmão.
+
+
+	seletor de irmão geral: 
+h1~p{}
+basta que os p sejam irmão de h1 que eles levarãoo a formatação.
+ele basta ser após o h1, mas pode ser qualquer numero de irmãos. 
+mas ainda sim se tive algo entre eles não funcionará.
+
+
+
+
+
+
+
