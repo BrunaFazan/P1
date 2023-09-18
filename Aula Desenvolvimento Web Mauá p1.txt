@@ -6,17 +6,30 @@ o head é toda a parte que não aparece pro usuário
 <!-- o <meta> serve para informar o navegador o que estamos usando -->
 normalmente é sempre UTF-8
 <meta charset="utf-8"> 
-<meta lang="pt-br"> a lingua usada 
+O ajuste realizado não garante que o documento HTML tenha sido armazenado utilizando o encoding UTF-8.
+Caso o navegador seja configurado para abrir o arquivo utilizando o encoding UTF-8, o ajuste resolverá o problema, ou seja, a letra com acento será exibida corretamente. isso NÃO é verdade
+Caso o desenvolvedor especifique o encoding utilizado pelo navegador na metatag, no lugar de UTF-8, ele resolverá o problema, ou seja, a letra com acento será exibida corretamente. NÃO É VERDADE
+Não basta só colocar o <meta charset="utf-8">  para que apareca corretamente o idioma desejado.
+
+
+
+
+<html lang="pt-br"> a lingua usada 
+se informarmos a lingua como portugues e escrevermos em inglês, quando abrirmos a página, ela vai aparecer em ingles, isso não traduz o conteúdo colocado na página. 
+
+
 o meta fica dentro do head 
 </head>
 
 
------------------------
+**********************************************************************
 
 o body é a parte que parece pro usário 
 <body>
 tudo que ficar aqui dentro aparece pro usuário, é a estrutura da página
 a menos que esteja em comentário 
+
+
 <ul(se colocarmos aqui dentro type=circle a bolinha aparece aberta, square aparece quadrado e disc aparece ooriginal> unorded list (?)
 <li> significa list item </li>
 <li> podemos add itens da lista, mas eles aparecem só com um ponto ao lado</li>
@@ -26,6 +39,7 @@ a menos que esteja em comentário
 1.
 2.
 3. assim
+ele não ordena sozinho alfabeticamente ou de outro modo. depende de como vc colocar.
 
 <!--             --> podemos add comentário apertando ctrl e ; 
 <h1> <h1> define o tamanho do título, quanto menor o número maior o título
@@ -46,7 +60,7 @@ dentro do parágrafo podemos add <p> Visite nossa <a href="o link"> próxima pá
 
 <em>: Define um texto com ênfase leve, geralmente exibido em itálico.
 
-<span>: Um contêiner genérico que permite aplicar estilos ou scripts a uma parte específica do texto.
+<span>: Um contêiner genérico que permite aplicar estilos ou scripts a uma parte específica do texto./o SPAN deixa um texto ao lado do outro
 
 <a>: Define um link para outra página ou recurso.
 
@@ -57,7 +71,7 @@ dentro do parágrafo podemos add <p> Visite nossa <a href="o link"> próxima pá
 <time>: Usado para representar datas e horas de maneira semântica.
 
 
-------------------------------------------------
+**********************************************************************
 segunda aula
 
 dentro das tags conseguimos adicionar atributos 
@@ -93,45 +107,58 @@ pega o video compartilhar -- incorporar -- cola dentro de um <p> </p> no vs code
 
 como colocar elementos programaveis dentro do codigo:
 
-
----------------------------------
+**********************************************************************
 o div serve para divisão de itens na pagina
 que tem id, para identificar cada coisa
 
 header é um lemento que introduz o assunto
 
 
-para criação de tabelas no HTML usamos <table (aqui podemos colocar border=1 que definirá a espessura da tabela)>
-depois o <tr> que define a linha da tabela e dentro vem o <td> que é table data que são as colunas
+para criação de tabelas no HTML usamos
+ <table (aqui podemos colocar border=1 que definirá a espessura da tabela)>
+depois o <tr> que define a linha da tabela 
+e dentro vem o <td> que é table data que são as colunas
 tem  o th tbm, que é table header, o cabeçário da tabela
-
+não é correto usar para layout de página, somente  para fazer tabelas mesmo
 
 o colspan faz a coluna mesclar com a outra
 o rowspan é a mesma coisa mas com linhas 
 
------------------------------------
+**********************************************************************
 
 Formulários:
 dentro do body inserimos a tag form, onde colocamos as informações que queremos em texto.
 depois a tag input vai trazer type=text e name, o type é onde vai aparecer a caixinha para que o usuário coloque seu nome etc. o name é para identificarmos mais para frente de onde estamos puxando os dados. o type pode ser passoword, ao invés de text, assim a senha não fica exposta.
 o type button cria um botão, mas sem funcionalidade para o form, para ter funcionalidade precisa ser a tag subimit  
+<input type="submit" value="cadastrar">
 
 !!!NO FINAL DE TODA LINHA QUE NÃO TEM TAG DE TEXTO TEM QUE POR <br> NO FINAL!!!!!!!!!!
 
+aqui só seleciona uma opção 
+ <p>Login:</p>
+            <input type="text" name="login"><br>
+            <p>Sexo:</p>
+            <input type="radio" name="Sexo" value="M">
+            Masculino
+            <br>
+            <input type="radio" name="Sexo" value="">
+            Feminino
+            <br>
 
-
+aqui voce seleciona mais de uma opção 
   <p>Interesses</p>
     <input type="checkbox" name="interesses"> Futebol <br>
     <input type="checkbox" name="interesses"> Cursos <br>
     <input type="checkbox" name="interesses"> Moda <br>
 
+
+aqui abre uma caixinha com a lista dos estados abaixo
   <p>Estado</p>
     <select name="estado">
       <option value="sp">SP</option>
       <option value="mg">MG</option>
 
-
-------------------------------------------------
+**********************************************************************
 
 CSS:
 
@@ -184,9 +211,55 @@ o p.promocao é mais forte e vai ser levado em consideração
 p.final-pagina#rodape{ esse é "E"
 .curso, .novo-curso, #contato{ esse é 'OU'
 
-
 Descendência - seletores descendentes 
 
+Seletores de Elemento: Você pode selecionar elementos HTML diretamente usando seus nomes, por exemplo:
+
+p {
+  color: blue;
+}
+Isso afetará todos os parágrafos <p> na página.
+
+Seletores de Classe: Você pode atribuir classes a elementos HTML e selecioná-los usando o nome da classe precedido por um ponto (.):
+
+.destaque {
+  font-weight: bold;
+}
+Isso afetará todos os elementos com a classe "destaque".
+
+Seletores de ID: Você pode atribuir IDs únicos a elementos HTML e selecioná-los usando o nome do ID precedido por um hash (#):
+
+#cabecalho {
+  background-color: gray;
+}
+Isso afetará o elemento com o ID "cabecalho".
+
+Seletores de Filho e Descendente: Você pode selecionar elementos que são filhos diretos ou descendentes de outros elementos usando espaços:
+
+ul li {
+  list-style-type: circle;
+}
+Isso afetará todas as listas não ordenadas <ul> que contenham elementos de lista <li>.
+
+Seletores de Atributo: Você pode selecionar elementos com base em seus atributos, como o atributo "href" em links:
+
+a[href="https://www.exemplo.com"] {
+  color: green;
+}
+Isso afetará todos os links que tenham o atributo "href" definido como "https://www.exemplo.com".
+
+Seletores de Pseudo-Classes e Pseudo-Elementos: Você pode selecionar elementos em estados específicos (como :hover) ou partes específicas de elementos (como ::before para elementos antes do conteúdo):
+
+a:hover {
+  text-decoration: underline;
+}
+Isso afetará links quando o cursor do mouse estiver sobre eles.
+
+
+.principal p#promocao{
+} Todo elemento “p” que tenha o id promocao que seja descendente de um elemento que tenha a classe principal.
+
+**********************************************************************
 o SPAN deixa um texto ao lado do outro 
  
 
@@ -209,7 +282,7 @@ backgroundrepeat vai controlar quantas imagens aparecem
 background-attachment: fixed; ixa a imagem fixa no fundo da página
 
 
---------------------------------------------
+**********************************************************************
 Box Model HTML
 padding é espacamento interno, as divs se comportam como caixas dentro do html/css 
 margin é o espacamento externo, consegue controlar o espacamento de dois elementos.
@@ -218,7 +291,9 @@ margin colapse é quando nós definimos duas margens diferentes para duas divs, 
 o float é para divs(caixas) flutuantes. para conseguirmos posicionar as divs onde quisermos.
 o clear serve para posicionar itens na parte de baixo das divs (????)
 caso queria colocar um fundo para essas divs flutuantes precisamos do "clear=both" dentro de outra div sem conteúdo logo abaixo das divs anteriores, pois, o comportamento de itens flutuantes é assim, eles não ocupam tofo o espaço de fundo, só o espaco necessário. eles não empurram sua div pai para que todos os elementos estejam dentro delas. precisamos do clear para isso. o que vai empurrar o background todo são os outros itens dentro dele, não os divs flutuantes.
----------------------------
+
+
+**********************************************************************
 elementos inline, block e inline-block
 block: <h1> <p> <table> ocuparão todo espaço da tela e ficarão um embaixo do outro
 inline: <a> <span> <img> a largura é de acordo com seu conteudo e fica um do lado do outro
@@ -254,9 +329,14 @@ relativo se baseia na posição inicial dele
 o  absoluto define uma caixa que é removida do fluxo do doc baseado no container que tenha uma posição
 o fixo é baseado na tela do seu navegador 
 
----------------------------------
+
+**********************************************************************
+
 z index; o Z Index serve para a sobreposição de elementos, se eu tenho duas caixas e uma está encima da outra, o z index masi alto fará a caixa ficar na frente das outras,maior zindex vai ficar encima dos menores.
----------------------------------
+
+
+**********************************************************************
+
 a formatação de links é um pouco diferente do resto, links tem estados, depois de cllicar encima de um link ele ficar com uma  cor diferente 
  /* links não visitados */
     a: link{
@@ -280,7 +360,8 @@ primeiro a total depois, não visitados, depois visitados, depois o hover e depo
       a:active{
         color: #e4f371;
       } quando vc clica e segura em um link
------------------------------
+
+**********************************************************************
 Seletores:
 seletor de id:
 #id{
@@ -310,6 +391,56 @@ basta que os p sejam irmão de h1 que eles levarãoo a formatação.
 ele basta ser após o h1, mas pode ser qualquer numero de irmãos. 
 mas ainda sim se tive algo entre eles não funcionará.
 
+**********************************************************************
+content-box (valor padrão):
+
+O tamanho do elemento é calculado levando em consideração apenas o conteúdo do elemento, excluindo o preenchimento e a borda.
+O preenchimento e a borda aumentam o tamanho total do elemento.
+padding e margin 
+<style>
+  .content-box-example {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    margin: 10px;
+    background-color: lightblue;
+    border: 2px solid blue;
+    box-sizing: content-box;
+  }
+
+<div class="content-box-example">
+  Conteúdo com box-sizing: content-box
+</div>
+Neste exemplo, o elemento .content-box-example terá uma largura total de 240 pixels (200px de largura + 20px de preenchimento à esquerda + 20px de preenchimento à direita), e a margem não afeta a largura total
+
+
+
+
+border-box:
+
+O tamanho do elemento é calculado levando em consideração o conteúdo, o preenchimento e a borda, ou seja, o tamanho total do elemento é definido pela soma de todas essas dimensões.
+O preenchimento e a borda estão incluídos no tamanho total do elemento.
+padding e margin 
+
+<style>
+  .border-box-example {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    margin: 10px;
+    background-color: lightgreen;
+    border: 2px solid green;
+    box-sizing: border-box;
+  }
+
+<div class="border-box-example">
+  Conteúdo com box-sizing: border-box
+</div>
+Aqui, o elemento .border-box-example tem uma largura total de 200 pixels, independentemente do preenchimento e da margem. A largura inclui tanto o conteúdo quanto o preenchimento e a borda.
+
+**********************************************************************
+
+Os atributos “itemscope” e "itemtype” podem ser aplicados a elementos HTML comuns, como um “h1”, um “article” e até um “video”. Além disso, seu uso está relacionado à especificação dos microdados de uma página.
 
 
 
